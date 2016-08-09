@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff0000"
+    android:orientation="vertical">
+
+
+
+        <FrameLayout
+            android:id="@+id/fragmentmain_center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp"
+               >
+
+                <LinearLayout
+                    android:id="@+id/index_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/index_image"
+                        android:layout_width="26.0dip"
+                        android:layout_height="26.0dip"
+                        android:background="@mipmap/home_press" />
+
+                    <TextView
+                        android:id="@+id/index_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="爱家乡"
+
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/publish_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/publish_image"
+                        android:layout_width="26.0dip"
+                        android:layout_height="26.0dip"
+                        android:background="@mipmap/publish" />
+
+                    <TextView
+                        android:id="@+id/publish_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发布"
+
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/my_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/my_image"
+                        android:layout_width="26.0dip"
+                        android:layout_height="26.0dip"
+                        android:background="@mipmap/wode" />
+
+                    <TextView
+                        android:id="@+id/my_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我的"
+
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+</LinearLayout>

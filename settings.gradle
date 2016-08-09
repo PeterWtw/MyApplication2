@@ -1,0 +1,1 @@
+include ':app', ':xiangqingmodule', ':shouyemodule', ':fabumodule', ':usermodule'
