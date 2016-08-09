@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:drawableRight="@mipmap/area_icon"
+        android:drawableRight="@drawable/area_icon"
         android:gravity="center"
         android:text="鳌江"
         android:textColor="#ffffff"
@@ -28,8 +28,8 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@mipmap/search_bg"
-        android:drawableLeft="@mipmap/search"
+        android:background="@drawable/search_bg"
+        android:drawableLeft="@drawable/search"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:text="查找商户"
@@ -38,14 +38,14 @@
         android:textSize="16sp" />
 
 
-        <ImageView
-            android:layout_weight="2"
-            android:id="@+id/head_image_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:src="@mipmap/message" />
+    <ImageView
+        android:layout_weight="2"
+        android:id="@+id/head_image_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/message" />
 
 
 </LinearLayout>
