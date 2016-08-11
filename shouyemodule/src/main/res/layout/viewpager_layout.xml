@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+    <RelativeLayout
+        android:id="@+id/Relative_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpage1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
+        <LinearLayout
+            android:id="@+id/dots_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:src="@drawable/seleted"
+                android:id="@+id/dot1"/>
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:id="@+id/dot2"
+                android:src="@drawable/no_seleted" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
