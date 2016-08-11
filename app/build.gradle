@@ -25,11 +25,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
+    //compile 'com.android.support.constraint:constraint-Deng_fragment:1.0.0-alpha3'
     testCompile 'junit:junit:4.12'
     compile project(':fabumodule')
     compile project(':shouyemodule')
     compile project(':usermodule')
-    compile project(':xiangqingmodule')
     compile 'com.android.support:support-v4:24.1.1'
+    compile project(':xiangqingmodule')
+    compile 'com.google.code.gson:gson:2.7'
 }

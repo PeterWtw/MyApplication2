@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Xiangqingmodule</string>
+    <string name="DEATAILS_TITER">详情</string>
+    <string name="DETAILS_SHOP_NAME">商店名：</string>
+    <string name="DETAILS_AVERAGE">人均：</string>
+    <string name="DETAILS_TIME">营业时间：</string>
+    <string name="DETAILS_PHOME">电话</string>
+    <string name="DETAILS_JUBAO">举报</string>
+    <string name="DETAILS_ADDRESS">地址：</string>
+    <string name="DETAILS_CONTACTS">联系人：</string>
+    <string name="DETAILS_PHONE_NUMBER">电话号码：</string>
+    <string name="DETAILS_SHOP_CONTENT">暂无详情介绍！</string>
 </resources>

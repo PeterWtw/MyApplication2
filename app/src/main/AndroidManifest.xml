@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".startActivity" />
+        <activity android:name="com.example.shouyemodule.DengluActivity" />
     </application>
 
 </manifest>

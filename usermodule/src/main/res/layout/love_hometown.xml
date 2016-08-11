@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#2ea675">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginRight="110dp"
+            android:src="@mipmap/buttom_icon1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="关于爱家乡"
+            android:layout_marginRight="110dp"
+            android:textSize="30dp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="  《爱家乡》是一款便民信息软件,旨在最全面和最准确收集家乡的生活类信息,从而服务当地人,实现特定区域内人与人间的互动更频繁,信息来往更高效.爱家乡,让每个人更爱自己的家乡,让每个家乡成为一个品牌."
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="  《爱家乡》欢迎与各行各业交流和合作,共同提升平台的价值与合作方的业务,实现多赢或者双赢的局面.平台联系人陈先生 电话1385814242(微信同号)."
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" />
+
+</LinearLayout>
+
