@@ -23,17 +23,15 @@ import android.widget.Toast;
 import com.example.xiangqingmodule.detailshttpurl.DetailsHttp;
 import com.example.xiangqingmodule.shopdata.ShopDateJson;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
+
 import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 

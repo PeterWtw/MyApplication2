@@ -18,5 +18,6 @@
         <activity android:name=".startActivity" />
         <activity android:name="com.example.shouyemodule.DengluActivity" />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
