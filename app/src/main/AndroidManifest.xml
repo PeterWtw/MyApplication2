@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".startActivity" />
         <activity android:name="com.example.shouyemodule.DengluActivity" />
+        <activity android:name="com.example.usermodule.Deng_activity" />
+        <activity android:name="com.example.shouyemodule.Gridview_Activity" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

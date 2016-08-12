@@ -1,12 +1,16 @@
 package com.example.fabumodule;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -27,12 +31,23 @@ public class Fragment_fabu extends Fragment {
     private String[] iconName = { "美食", "娱乐", "房产", "车", "婚庆", "装修", "教育",
             "工作", "百货", "跳蚤", "商务", "便民","老乡会","其他" };
 
-
+    View mainview;
     @Override
-    public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fabu_layout, null);
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mainview = inflater.inflate(R.layout.fabu_layout, null);
 
-        gview = (GridView) view.findViewById(R.id.gview);
+        gview = (GridView) mainview.findViewById(R.id.gview);
+        gview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                View v=inflater.inflate(R.layout.fabuwindow_layout,null);
+                PopupWindow popupWindow=new PopupWindow(v,500,800);
+                popupWindow.setBackgroundDrawable(new BitmapDrawable());
+                popupWindow.setFocusable(true);
+                popupWindow.showAsDropDown(mainview , Gravity.BOTTOM,0);
+            }
+        });
+
         //新建List
         data_list = new ArrayList<Map<String, Object>>();
         //获取数据
@@ -48,7 +63,7 @@ public class Fragment_fabu extends Fragment {
         sim_adapter = new SimpleAdapter(getContext(), data_list, R.layout.item, from, to);
         //配置适配器
         gview.setAdapter(sim_adapter);
-        return view;
+        return mainview;
     }
 
 }

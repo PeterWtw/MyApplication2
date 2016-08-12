@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/head_layout"/>
+    <include layout="@layout/shou_head"/>
 
     <include layout="@layout/viewpager_layout"/>
 
-    <GridView
-        android:id="@+id/gridview1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="4"
-
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="1dp"
-        />
 
     <RelativeLayout
         android:id="@+id/Relative_viewPager"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        >
-
+        android:layout_height="200dp"
+        android:background="@color/white">
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpage2"
             android:layout_width="match_parent"
-            android:layout_height="150dp"/>
+            android:layout_height="200dp"
+             />
 
         <LinearLayout
-            android:id="@+id/dots_layout"
+            android:id="@+id/dots_layout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -45,7 +34,7 @@
                 android:layout_width="8dp"
                 android:layout_height="8dp"
                 android:src="@drawable/seleted"
-                android:id="@+id/dot1"/>
+                android:id="@+id/dot3"/>
 
             <ImageView
                 android:layout_width="8dp"
@@ -55,11 +44,19 @@
             <ImageView
                 android:layout_width="8dp"
                 android:layout_height="8dp"
-                android:id="@+id/dot2"
+                android:id="@+id/dot4"
                 android:src="@drawable/no_seleted" />
-
-
         </LinearLayout>
 
     </RelativeLayout>
+
+    <include layout="@layout/laoxianghui_layout"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/shou_list">
+
+    </ListView>
+
 </LinearLayout>

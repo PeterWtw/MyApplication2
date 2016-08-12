@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="bg_body_color">#ffebebeb</color>
+    <color name="laoxinaghui">#e2e1e1</color>
     <color name="white">#ffffffff</color>
     <color name="bg_buttom_color">#ffebebeb</color>
     <color name="bg_color_transparent">#00000000</color>

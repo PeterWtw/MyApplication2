@@ -10,14 +10,14 @@
 
     <ImageView
         android:src="@drawable/meishi"
-        android:id="@+id/grid_image1"
+        android:id="@+id/grid_image"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_centerHorizontal="true"
         />
 
     <TextView
-        android:id="@+id/grid_text1"
+        android:id="@+id/grid_text"
         android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

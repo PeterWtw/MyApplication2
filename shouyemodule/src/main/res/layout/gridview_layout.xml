@@ -6,11 +6,11 @@
 
 <GridView
 
-        android:id="@+id/gview1"
+        android:id="@+id/gview_shou"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="4"
-        android:columnWidth="60dp"
+        android:columnWidth="45dp"
         android:stretchMode="columnWidth"
         android:verticalSpacing="1dp"
 
