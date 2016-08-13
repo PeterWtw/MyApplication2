@@ -1,1 +1,1 @@
-include ':app', ':shouyemodule', ':fabumodule', ':usermodule', ':xiangqingmodule'
+include ':app', ':shouyemodule', ':fabumodule', ':xiangqingmodule', ':usermodule'

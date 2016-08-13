@@ -10,13 +10,17 @@
 
 
     <FrameLayout
-        android:background="#ffff00"
+        android:background="@color/white"
         android:id="@+id/fragment_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/laoxinaghui"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

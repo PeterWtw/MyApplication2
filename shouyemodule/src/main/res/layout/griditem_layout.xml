@@ -17,6 +17,7 @@
             android:clickable="true"
             android:onClick="gridclick"/>
         <TextView
+            android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="美食"
@@ -35,19 +36,20 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@color/white"
         android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/layout_shop"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            >
 
             <TextView
                 android:id="@+id/shaop_type"
@@ -74,7 +76,7 @@
         <LinearLayout
             android:id="@+id/layout_arae"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:gravity="center"
             android:orientation="horizontal"
@@ -97,15 +99,27 @@
                 android:src="@drawable/buttom_icon" />
         </LinearLayout>
     </LinearLayout>
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="1.0dip"
         android:background="@color/bg_line_color" />
-    <ListView
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
         android:id="@+id/meishi_list"/>
+
+    </LinearLayout>
+</ScrollView>
+
 <!--
      <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@id/good_listview"

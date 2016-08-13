@@ -11,13 +11,13 @@
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="#3F9F00"
+        android:background="#ff50c577"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
             android:src="@drawable/back_icon"
             android:id="@+id/details_back_btn"
             android:layout_gravity="center"
@@ -40,23 +40,22 @@
             />
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:src="@drawable/fenxiang"
             android:layout_gravity="center"
             android:id="@+id/details_fengxiang"
             android:clickable="true"
             android:onClick="detailsclik"
-            />
-
+            android:layout_marginRight="10dp"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:src="@drawable/love_icon2"
             android:id="@+id/details_collect"
             android:layout_gravity="center"
             android:clickable="true"
             android:onClick="detailsclik"
-            />
+            android:layout_marginRight="10dp"/>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -71,10 +70,9 @@
         android:layout_weight="1"
         >
             <android.support.v4.view.ViewPager
+                android:id="@+id/details_shop_image"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:id="@+id/details_shop_image"
-                android:scaleType="fitXY"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -82,8 +80,9 @@
                 android:text="@string/DETAILS_SHOP_NAME"
                 android:textSize="20dp"
                 android:textColor="#000000"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="14dp"
                 android:id="@+id/details_shop_name"
+                android:layout_marginLeft="5dp"
                 />
             <LinearLayout
             android:layout_width="match_parent"
@@ -97,13 +96,13 @@
                 android:text="@string/DETAILS_AVERAGE"
                 android:textColor="#407F7F7F"
                 android:id="@+id/details_average"
-                android:textSize="17dp"
-
+                android:textSize="15dp"
+                android:layout_marginLeft="5dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:text="@string/DETAILS_TIME"
                 android:textColor="#607F7F7F"
                 android:id="@+id/details_time"
@@ -113,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:src="#407F7F7F"
+
             />
             <TextView
                 android:layout_width="match_parent"
@@ -121,8 +121,8 @@
                 android:text="@string/DETAILS_ADDRESS"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
-                android:textSize="16dp"
-                />
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -134,8 +134,8 @@
                 android:text="@string/DETAILS_CONTACTS"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
-                android:textSize="16dp"
-                />
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -147,8 +147,8 @@
                 android:text="@string/DETAILS_PHONE_NUMBER"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
-                android:textSize="16dp"
-                />
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -158,17 +158,17 @@
                 android:layout_height="30dp"
                 android:text="@string/DEATAILS_TITER"
                 android:gravity="fill_vertical"
-                android:textSize="16dp"
+                android:textSize="15sp"
                 android:background="#207F7F7F"
                 android:textColor="#757F7F7F"
-                />
+                android:layout_marginLeft="5dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:id="@+id/details_shop_content"
                 android:text="@string/DETAILS_SHOP_CONTENT"
-                android:textSize="12dp"
-                />
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"/>
         </LinearLayout>
     </ScrollView>
     <ImageView
@@ -178,13 +178,13 @@
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="#207F7F7F"
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:id="@+id/details_phone"
             android:layout_weight="1"
@@ -208,12 +208,12 @@
         </LinearLayout>
         <ImageView
             android:layout_width="2dp"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:src="#607F7F7F"
             />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:id="@+id/details_jubao"
             android:layout_weight="1"

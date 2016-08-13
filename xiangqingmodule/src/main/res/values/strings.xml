@@ -10,4 +10,12 @@
     <string name="DETAILS_CONTACTS">联系人：</string>
     <string name="DETAILS_PHONE_NUMBER">电话号码：</string>
     <string name="DETAILS_SHOP_CONTENT">暂无详情介绍！</string>
+    <string name="JUBAOPP_TITER">选择举报内容</string>
+    <string name="JUBAOPP_ZHILIANG">质量问题或描述不符合</string>
+    <string name="JUBAOPP_TAIDU">服务态度恶劣</string>
+    <string name="JUBAOPP_GUANGGAO">虚假广告</string>
+    <string name="JUBAOPP_OTHER">其他</string>
+    <string name="JUBAOPP_EDITEXT">补充（0-100字）</string>
+    <string name="JUBAPPP_CANCEL">取消</string>
+    <string name="JUBAOPP_CONFIRM">确认提交</string>
 </resources>

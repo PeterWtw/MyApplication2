@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="选择举报内容"
+            android:text="@string/JUBAOPP_TITER"
             android:gravity="left|center"
             android:textSize="14dp"
             android:textColor="#757575"
@@ -34,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="质量问题或描述不符合"
+                android:text="@string/JUBAOPP_ZHILIANG"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="服务态度恶劣"
+                android:text="@string/JUBAOPP_TAIDU"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="虚假广告"
+                android:text="@string/JUBAOPP_GUANGGAO"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
@@ -120,7 +120,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="其他"
+                android:text="@string/JUBAOPP_OTHER"
                 android:textSize="14dp"
                 android:textColor="#000000"
                 android:gravity="fill_vertical"
@@ -145,7 +145,7 @@
             android:layout_height="60dp"
             android:background="#757575"
             android:textColor="#000000"
-            android:hint="补充（0-100字）"
+            android:hint="@string/JUBAOPP_EDITEXT"
             android:gravity="top|left"
             android:visibility="gone"
             android:textSize="13dp"
@@ -170,7 +170,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="取消"
+            android:text="@string/JUBAPPP_CANCEL"
             android:textSize="21dp"
             android:textColor="#3F9F00"
             android:gravity="center_vertical|center"
@@ -185,7 +185,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="确认提交"
+            android:text="@string/JUBAOPP_CONFIRM"
             android:textSize="21dp"
             android:textColor="#3F9F00"
             android:gravity="center_vertical|center"

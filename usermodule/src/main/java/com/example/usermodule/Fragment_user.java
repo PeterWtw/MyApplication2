@@ -21,20 +21,6 @@ public class Fragment_user extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_user,null);
-
-
-        /*
-        TextView textview2 = (TextView) view.findViewById(R.id.Mypublish);
-        TextView textview3 = (TextView) view.findViewById(R.id.Mydraft);
-        TextView textview4 = (TextView) view.findViewById(R.id.Mycollect);
-        TextView textview5 = (TextView) view.findViewById(R.id.Myinformation);
-        TextView textview6 = (TextView) view.findViewById(R.id.PlatformDeclare);
-        TextView textview7 = (TextView) view.findViewById(R.id.LoveHometown);
-        TextView textview8 = (TextView) view.findViewById(R.id.ShareSoftware);
-        TextView textview9 = (TextView) view.findViewById(R.id.AlterPassword);
-        TextView textview10 = (TextView) view.findViewById(R.id.PurgeCache);
-        */
-        //fm=getChildFragmentManager();
         TextView textView1=(TextView) view.findViewById(R.id.denglu_Btn);
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
