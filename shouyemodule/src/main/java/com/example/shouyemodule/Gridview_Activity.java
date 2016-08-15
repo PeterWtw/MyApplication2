@@ -104,11 +104,20 @@ public class Gridview_Activity extends Activity {
                 pop.showAsDropDown(meishi,0,0);
 
                 listView=(ListView) poplayout.findViewById(R.id.meishi_windowlist1);
-                listView.setAdapter(new ListviewAdapter(Gridview_Activity.this,dat));
-
                 listView2=(ListView) poplayout.findViewById(R.id.meishi_windowlist2);
+                listView.setAdapter(new ListviewAdapter(Gridview_Activity.this,dat));
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        datt=(ArrayList<MeishiText>)dat.get(i).getChildCategoryList();
+                        listView2.setAdapter(new ListviewAdapter2(Gridview_Activity.this,datt));
+                    }
+                });
+
                 datt=(ArrayList<MeishiText>)dat.get(0).getChildCategoryList();
                 listView2.setAdapter(new ListviewAdapter2(Gridview_Activity.this,datt));
+
+
 
             }
         });
