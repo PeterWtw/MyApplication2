@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.xiangqingmodule.MyCollect;
+
 public class Fragment_user extends Fragment {
     FragmentManager fm;
 
@@ -27,6 +29,15 @@ public class Fragment_user extends Fragment {
             public void onClick(View view) {
                 Intent intent=new Intent();
                 intent.setClass(getContext(),Deng_activity.class);
+                startActivity(intent);
+            }
+        });
+
+        view.findViewById(R.id.Mycollect).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(getContext(),MyCollect.class);
                 startActivity(intent);
             }
         });

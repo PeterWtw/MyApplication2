@@ -4,6 +4,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,12 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +40,7 @@ public class Fragment_fabu extends Fragment {
     private String[] iconName = { "美食", "娱乐", "房产", "车", "婚庆", "装修", "教育",
             "工作", "百货", "跳蚤", "商务", "便民","老乡会","其他" };
 
-    //String [] msg2={"酒店","饭店","西点","夜宵","外卖","茶馆","零食特产","其他","小吃"};
+    String [] msg2={"酒店","饭店","西点","夜宵","外卖","茶馆","零食特产","其他","小吃"};
     String [][] msg={{"酒店","饭店","西点","夜宵","外卖","茶馆","零食特产","其他","小吃"},
             {"KTV","电影","酒吧","宾馆","足底按摩","其他"},
             {"买卖","租赁","其他"},
@@ -59,26 +60,48 @@ public class Fragment_fabu extends Fragment {
 
     View mainview;
     @Override
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         mainview = inflater.inflate(R.layout.fabu_layout, null);
 
         gview = (GridView) mainview.findViewById(R.id.gview);
         gview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 Display dp=getActivity().getWindow().getWindowManager().getDefaultDisplay();
                 View v=inflater.inflate(R.layout.fabuwindow_layout,null);
-                final PopupWindow popupWindow=new PopupWindow(v,(int)(dp.getWidth()*0.92),(int)(dp.getHeight()*0.6));
+                final PopupWindow popupWindow=new PopupWindow(v,(int)(dp.getWidth()*0.92), ActionBar.LayoutParams.WRAP_CONTENT);
                 popupWindow.setBackgroundDrawable(new BitmapDrawable());
                 popupWindow.setFocusable(true);
                 popupWindow.showAtLocation(mainview , Gravity.BOTTOM,0,0);
 
                 list = (ListView) v.findViewById(R.id.PopupWindow_listview);
 
-                list.setAdapter(new ArrayAdapter(getContext(),R.layout.window_item_layout,R.id.PopupWindow_listview_text,msg[i]));
+                list.setAdapter(new BaseAdapter() {
+                    @Override
+                    public int getCount() {
+                        return msg[i].length;
+                    }
+
+                    @Override
+                    public Object getItem(int j) {
+                        return msg[i][j];
+                    }
+
+                    @Override
+                    public long getItemId(int j) {
+                        return j;
+                    }
+
+                    @Override
+                    public View getView(int j, View cview, ViewGroup viewGroup) {
+                        cview=inflater.inflate(R.layout.window_item_layout,null);
+                        TextView textView=(TextView) cview.findViewById(R.id.PopupWindow_listview_text);
+                        textView.setText(msg[i][j]);
+                        return cview;
+                    }
+                });
 
                 v.findViewById(R.id.pop_error).setOnClickListener(new View.OnClickListener(){
-
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
@@ -111,7 +134,7 @@ public class Fragment_fabu extends Fragment {
 
         String[] from = {"image", "text"};
         int[] to = {R.id.image, R.id.text};
-        sim_adapter = new SimpleAdapter(getContext(), data_list, R.layout.item, from, to);
+        sim_adapter = new SimpleAdapter(getContext(), data_list, R.layout.gridview_item, from, to);
         gview.setAdapter(sim_adapter);
         return mainview;
     }

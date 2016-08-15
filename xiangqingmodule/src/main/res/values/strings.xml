@@ -18,4 +18,7 @@
     <string name="JUBAOPP_EDITEXT">补充（0-100字）</string>
     <string name="JUBAPPP_CANCEL">取消</string>
     <string name="JUBAOPP_CONFIRM">确认提交</string>
+    <string name="COLLECT_TITER">我的收藏</string>
+    <string name="COLLECT_PPDEILTE">确定删除该条信息?</string>
+    <string name="COLLECT_PPQUEDING">确定</string>
 </resources>

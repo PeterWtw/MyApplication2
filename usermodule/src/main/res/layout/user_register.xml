@@ -5,14 +5,14 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
-        android:background="#008000"
-        >
+        android:background="#ff50c577"
+        android:gravity="center_vertical">
         <ImageView
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
             android:onClick="myclick"
             android:src="@drawable/back_icon1"
             android:layout_marginLeft="20dp"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="用户注册"
-            android:textSize="35dp"
+            android:textSize="20dp"
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#FFFFFF"

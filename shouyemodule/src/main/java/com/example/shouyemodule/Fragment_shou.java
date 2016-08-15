@@ -39,6 +39,7 @@ import com.example.shouyemodule.adapter.myBaseAdapter;
 import com.example.shouyemodule.entity.Shop;
 import com.example.shouyemodule.entity.ShopImage;
 
+import com.example.usermodule.Deng_activity;
 import com.example.xiangqingmodule.DetailsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -113,7 +114,7 @@ public class Fragment_shou extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(getContext(), DengluActivity.class);
+                intent.setClass(getContext(), Deng_activity.class);
                 startActivity(intent);
             }
         });

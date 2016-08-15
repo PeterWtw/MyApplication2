@@ -7,6 +7,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -80,17 +83,25 @@ public class DetailsActivity extends Activity {
     //当前商店图片的数量
     int shopinagecount;
     int count=0;
+    //数据库操作
+    SQLiteOpenHelper helper;
+    SQLiteDatabase db;
+
+    //商店信息
+    String shopdata_name;
+    String shopdata_avrage;
+    String shopdata_address;
+    String shopdata_time;
+    String shopdata_imageurl;
 
     Thread s;
     Handler hander=new Handler(){
 
         @Override
         public void handleMessage(Message msg) {
-            if(msg.what==0){
-                count++;
-                Log.e("TAG",count+"");
-                details_shop_image.setCurrentItem(count);
-            }
+
+                details_shop_image.setCurrentItem(msg.arg1);
+
         }
 
     };
@@ -100,7 +111,10 @@ public class DetailsActivity extends Activity {
             try {
                 while(true){
                     Thread.sleep(1000*8);
-                    hander.sendEmptyMessage(0);
+                    count++;
+                    Message message=hander.obtainMessage();
+                    message.arg1=count;
+                    hander.sendMessage(message);
                 }
             } catch (InterruptedException e) {
 
@@ -124,8 +138,10 @@ public class DetailsActivity extends Activity {
         }
 //收藏
         else if (i == R.id.details_collect) {
+            db = helper.getReadableDatabase();
             //收藏
             Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
+            saveshopname(shopdata_name);
         }
 //打电话
         else if (i == R.id.details_phone) {
@@ -296,10 +312,13 @@ public class DetailsActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_detailsay);
 
+        //建立数据库
+        sqlite();
         //填充控件
         inview();
         //网络获取数据
         geturldata();
+
 
 
 
@@ -408,22 +427,42 @@ public class DetailsActivity extends Activity {
         for( int i=0;i<shopname.size();i++){
             String nameshop=shopname.get(i).toString();
             if(shopdataname.equals(nameshop)){
-                shopnumber=i;
+                if(i==0){
+                    shopnumber=i;
+                }else{
+                    shopnumber=i+1;
+                }
+
             }
         }
         //当前商店信息的图片数量
         shopinagecount=shoplist.get(shopnumber).getImgUrlList().size();
         //将图片地址放入urlimage集合中
 
-        for(int i=0;i<shopinagecount;i++){
-            ImageView imageView=new ImageView(DetailsActivity.this);
-            Picasso.with(DetailsActivity.this).load(shoplist.get(shopnumber).getImgUrlList().get(i).getImg_url()).into(imageView);
-          // String imageurl=shoplist.get(shopnumber).getImgUrlList().get(i).getImg_url();
-            urlimage.add(imageView);
+        if(shopinagecount==1){
+            for(int j=0;j<2;j++) {
+                ImageView imageView = new ImageView(DetailsActivity.this);
+                Picasso.with(DetailsActivity.this).load(shoplist.get(shopnumber).getImgUrlList().get(0).getImg_url()).into(imageView);
+                urlimage.add(imageView);
+            }
 
+        }else {
+            for (int i = 0; i < shopinagecount; i++) {
+                ImageView imageView = new ImageView(DetailsActivity.this);
+                Picasso.with(DetailsActivity.this).load(shoplist.get(shopnumber).getImgUrlList().get(i).getImg_url()).into(imageView);
+                // String imageurl=shoplist.get(shopnumber).getImgUrlList().get(i).getImg_url();
+                urlimage.add(imageView);
+
+
+
+            }
         }
 
-
+        shopdata_name=shoplist.get(shopnumber).getMerchant_name();
+        shopdata_avrage=shoplist.get(shopnumber).getPer_capita_consumption()+"/人起";
+        shopdata_address=shoplist.get(shopnumber).getBusiness_location();
+        shopdata_time=shoplist.get(shopnumber).getOpening_time()+"-"+shoplist.get(shopnumber).getClosing_time();
+        shopdata_imageurl=shoplist.get(shopnumber).getImgUrlList().get(0).getImg_url();
 
         details_shop_name.setText("商店名："+shoplist.get(shopnumber).getMerchant_name());
         details_average.setText("人均："+shoplist.get(shopnumber).getPer_capita_consumption()+"/人起");
@@ -432,8 +471,8 @@ public class DetailsActivity extends Activity {
         details_phone_number.setText("电话："+shoplist.get(shopnumber).getPhone());
         details_shop_content.setText(shoplist.get(shopnumber).getDetail_info());
         details_contacts.setText("联系人："+shoplist.get(shopnumber).getMerchant_name());
-        lunbotu();
 
+        lunbotu();
     }
 
     public void lunbotu(){
@@ -483,10 +522,93 @@ public class DetailsActivity extends Activity {
         //设置适配器
         details_shop_image.setAdapter(pagerAdapter);
 
+        details_shop_image.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                count=position;
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
         s=new my_Thread();
         s.start();
 
 
     }
+
+
+    public void sqlite(){
+
+
+        helper=new SQLiteOpenHelper(DetailsActivity.this,"collectsql.db",null,2) {
+            @Override
+            public void onCreate(SQLiteDatabase sqLiteDatabase) {
+                Log.v("TAG","建立表进入");
+                String sql="create table collect_tb(" +
+                        "_id integer primary key autoincrement," +
+                        "shop_name varchar," +
+                        "shop_cost varchar,"+
+                        "shop_address varchar," +
+                        "shop_time varchar," +
+                        "shop_imageurl varchar)"  ;
+                sqLiteDatabase.execSQL(sql);
+
+            }
+
+            @Override
+            public void onUpgrade(SQLiteDatabase sqlite, int i, int i1) {
+
+            }
+        };
+
+       // db = helper.getReadableDatabase();
+    }
+
+    public void saveshopname(String shopname){
+//        db.execSQL();     增删改
+//        db.rawQuery()；    查询
+        if(hasshopname(shopname)){
+            //先删除原有商店
+            deleteshopname(shopname);
+        }
+
+        String sql = "insert into collect_tb (shop_name,shop_cost,shop_address,shop_time,shop_imageurl) values (?,?,?,?,?)";
+        db.execSQL(sql , new String[]{shopname,shopdata_avrage,shopdata_address,shopdata_time,shopdata_imageurl});
+
+    }
+
+
+
+
+
+     //判断商店是否存在
+
+    public boolean hasshopname(String shopname){
+        boolean flag = false;
+
+        String sql = "select * from collect_tb where shop_name = ?";
+        Cursor c = db.rawQuery(sql , new String[]{shopname});
+        flag = c.moveToFirst();    //true/false
+
+        return flag;
+    }
+
+
+     //删除已存在的商店
+
+    public void deleteshopname(String shopname){
+        String sql = "delete from collect_tb where shop_name = ?";
+        db.execSQL(sql , new String[]{shopname});
+    }
+
 
 }

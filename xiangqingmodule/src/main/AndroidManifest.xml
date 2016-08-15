@@ -19,7 +19,7 @@
         -->
 
         <activity android:name=".DetailsActivity"/>
-
+        <activity android:name=".MyCollect"/>
 
     </application>
 
