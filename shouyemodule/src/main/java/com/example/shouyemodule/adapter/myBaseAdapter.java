@@ -28,7 +28,7 @@ public class myBaseAdapter extends BaseAdapter {
     private List<ShopImage> imgUrlList;
     ArrayList<Shop> data;
     private ImageView shou_list_img;
-    Context context;
+    private Context context;
 
     public myBaseAdapter( Context context,ArrayList<Shop> data){
         this.data=data;
@@ -54,7 +54,7 @@ public class myBaseAdapter extends BaseAdapter {
     public View getView(int i, View cview, ViewGroup viewGroup) {
 
         cview = LayoutInflater.from(context).inflate(R.layout.shou_list_item, null);
-        Log.e("TAG","第"+i+"次");
+        //Log.e("TAG","第"+i+"次");
         if(i>=1) {
             i=i+1;
         }

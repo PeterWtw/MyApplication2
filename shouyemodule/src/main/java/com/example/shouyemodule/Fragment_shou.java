@@ -1,12 +1,18 @@
 package com.example.shouyemodule;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
 
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 
 import android.support.v4.view.ViewPager;
@@ -56,7 +62,7 @@ public class Fragment_shou extends Fragment {
     private View view1;
     private View view2;
     private ImageView imageView;
-    private ImageView shou_list_img;
+    private ImageView shou_list_phone;
     private ViewPager viewpager1;
     private ViewPager viewpager2;
     private GridView gridView1;
@@ -111,6 +117,9 @@ public class Fragment_shou extends Fragment {
                 startActivity(intent);
             }
         });
+        //View vv=LayoutInflater.from(getContext()).inflate(R.layout.shou_list_item,null);
+
+
         final TextView cityname = (TextView) view.findViewById(R.id.head_txt1);
         cityname.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,12 +188,45 @@ public class Fragment_shou extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 String shopName=shopdatas.get(i).getMerchant_name();
+                final  String phone=shopdatas.get(i).getPhone();
                 Intent intent=new Intent();
                 intent.setClass(getContext(),DetailsActivity.class);
                 intent.putExtra("shop_name",shopName);
                 Toast.makeText(getContext(),shopName,Toast.LENGTH_SHORT).show();
                 startActivity(intent);
+
+                shou_list_phone=(ImageView)view.findViewById(R.id.shou_list_phone);
+                shou_list_phone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+                        builder.setTitle("确定要拨打："+phone);
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent callphone = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phone));
+                                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                    // TODO: Consider calling
+                                    //    ActivityCompat#requestPermissions
+                                    // here to request the missing permissions, and then overriding
+                                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                    //                                          int[] grantResults)
+                                    // to handle the case where the user grants the permission. See the documentation
+                                    // for ActivityCompat#requestPermissions for more details.
+                                    return;
+                                }
+                                startActivity(callphone);
+                            }
+                        });
+                        builder.setPositiveButton("取消",null);
+
+                        builder.show();
+
+                    }
+                });
+
             }
         });
 
@@ -231,9 +273,9 @@ public class Fragment_shou extends Fragment {
                     JSONObject jsonObject=new JSONObject(result);
                     list=jsonObject.getString("list");
 
-
                     Gson gson=new Gson();
                     ArrayList<Shop> datas=gson.fromJson(list,new TypeToken<ArrayList<Shop>>(){}.getType());
+
                     if(datas==null){
                         Toast.makeText(getContext(), "数据为空", Toast.LENGTH_SHORT).show();
                     }else {

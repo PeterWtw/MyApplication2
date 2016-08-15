@@ -46,7 +46,7 @@ public class GridViewPageAdapter extends PagerAdapter {
         // 将View放置到当前显示界面上,这个显示界面就是参数container
         GridView gv =data.get(position);
         container.addView(gv);
-        Log.e("TAG","增加一个");
+        //Log.e("TAG","增加一个");
         return gv;
     }
 }

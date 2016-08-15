@@ -15,9 +15,32 @@ public class Shop  {
     private String business_location;
     private String closing_time;
     private String opening_time;
+    private String phone;
     private List<ShopImage> imgUrlList;
     private String img_url;
 
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "merchant_name='" + merchant_name + '\'' +
+                ", per_capita_consumption='" + per_capita_consumption + '\'' +
+                ", measure_unit='" + measure_unit + '\'' +
+                ", business_location='" + business_location + '\'' +
+                ", closing_time='" + closing_time + '\'' +
+                ", opening_time='" + opening_time + '\'' +
+                ", phone='" + phone + '\'' +
+                ", imgUrlList=" + imgUrlList +
+                ", img_url='" + img_url + '\'' +
+                '}';
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getClosing_time() {
         return closing_time;
@@ -85,17 +108,4 @@ public class Shop  {
     }
 
 
-
-
-    @Override
-    public String toString() {
-        return "Shop{" +
-                "merchant_name='" + merchant_name + '\'' +
-                ", per_capita_consumption='" + per_capita_consumption + '\'' +
-                ", measure_unit='" + measure_unit + '\'' +
-                ", business_location='" + business_location + '\'' +
-                ", opening_time='" + opening_time + '\'' +
-                ", imgUrlList=" + imgUrlList +
-                '}';
-    }
 }

@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
                 finish();
             }
         };
-        timer.schedule(task,1000*2);
+        timer.schedule(task,800*2);
 
 
     }
