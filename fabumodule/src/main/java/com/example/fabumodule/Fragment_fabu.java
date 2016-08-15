@@ -77,7 +77,7 @@ public class Fragment_fabu extends Fragment {
 
                 list.setAdapter(new ArrayAdapter(getContext(),R.layout.window_item_layout,R.id.PopupWindow_listview_text,msg[i]));
 
-                view.findViewById(R.id.pop_error).setOnClickListener(new View.OnClickListener(){
+                v.findViewById(R.id.pop_error).setOnClickListener(new View.OnClickListener(){
 
                     @Override
                     public void onClick(View v) {

@@ -28,7 +28,8 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="6dp"
-            android:src="@mipmap/error"/>
+            android:src="@mipmap/error"
+            android:clickable="true"/>
     </LinearLayout>
 
 </LinearLayout>

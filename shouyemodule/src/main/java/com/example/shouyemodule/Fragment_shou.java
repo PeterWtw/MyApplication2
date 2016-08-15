@@ -220,7 +220,7 @@ public class Fragment_shou extends Fragment {
                                 startActivity(callphone);
                             }
                         });
-                        builder.setPositiveButton("取消",null);
+                        builder.setNegativeButton("取消",null);
 
                         builder.show();
 
