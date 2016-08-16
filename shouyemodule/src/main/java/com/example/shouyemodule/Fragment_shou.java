@@ -178,6 +178,25 @@ public class Fragment_shou extends Fragment {
         GridViewAdapter adapter2 = new GridViewAdapter(icon1, iconName1, inflater);
         gridView2.setAdapter(adapter2);
 
+        view.findViewById(R.id.laoxianghui_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), Laoxiang_Activity.class);
+                intent.putExtra("data",list);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.waimaihui_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), Laoxiang_Activity.class);
+                intent.putExtra("data",list);
+                startActivity(intent);
+            }
+        });
+
         vpdata2.add(gridView1);
         vpdata2.add(gridView2);
 

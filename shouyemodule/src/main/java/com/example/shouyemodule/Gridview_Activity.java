@@ -89,6 +89,7 @@ public class Gridview_Activity extends Activity {
 
         String kind=intent.getStringExtra("kind");
         ((TextView)findViewById(R.id.item_title)).setText(kind);
+        ((TextView)findViewById(R.id.shaop_type)).setText(kind);
 
         getDatas();
         final LinearLayout meishi=(LinearLayout)findViewById(R.id.layout_shop);

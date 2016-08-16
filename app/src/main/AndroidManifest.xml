@@ -21,6 +21,7 @@
         <activity android:name="com.example.usermodule.Deng_activity" />
         <activity android:name="com.example.shouyemodule.Gridview_Activity" />
         <activity android:name="com.example.xiangqingmodule.DetailsActivity" />
+        <activity android:name="com.example.shouyemodule.Laoxiang_Activity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

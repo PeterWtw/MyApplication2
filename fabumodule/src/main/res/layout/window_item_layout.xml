@@ -5,8 +5,9 @@
     <TextView
         android:id="@+id/PopupWindow_listview_text"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="30dp"
         android:textSize="18sp"
+        android:textColor="#000000"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:orientation="vertical"
